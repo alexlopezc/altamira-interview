@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ALTAMIRA</title>
+<link rel="stylesheet" type="text/css" href="css/fontAll.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" href="css/supersized.css" type="text/css"
+	media="screen" />
+<script type="text/javascript" src="js/jquery1.8.2.js"></script>
+
+<script type="text/javascript" src="js/placeholderIE.js"></script>
+<script type="text/javascript" src="js/supersized.3.2.7.min.js"></script>
+<script type="text/javascript">
+	jQuery = jQuery.noConflict();
+	</script>
+<script type="text/javascript">
+		
+		jQuery(document).ready(function(){
+			jQuery.supersized({
+				
+					// Functionality
+					slide_interval          :   5000,		// Length between transitions
+					transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+					transition_speed		:	500,		// Speed of transition
+															   
+					// Components							
+					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+					slides 					:  	[			// Slideshow Images
+														{image : 'img/slide1.jpg', title : '', thumb : '', url : ''},
+														{image : 'img/slide2.jpg', title : '', thumb : '', url : ''},
+														{image : 'img/slide3.jpg', title : '', thumb : '', url : ''},
+														{image : 'img/slide4.jpg', title : '', thumb : '', url : ''}
+												]
+					
+				});
+		})
+		
+
+	</script>
+
+</head>
+
+<body>
+	<div class="container container1">
+		<div class="logo">
+			<a href="index.html"> <img src="img/logo.png" />
+			</a>
+		</div>
+		<div class="logo-right">
+			<h2>Online demo project</h2>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	<div class="container container2">
+		<div class="menu">
+			<ul>
+				<li class="menuitem"><a href="/Altamira">Home</a></li>
+				<li class="menuitem"><a href="/Altamira/rest.html">REST+XML</a></li>
+				<li class="menuitem"><a href="#">Services</a></li>
+				<li class="menuitem"><a
+					href="http://es.linkedin.com/in/calejandrolopez">My LinkedIn</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="container container3"></div>
+
+	<div class="container container4">
+		First example: Read an xml file and show info as an XML using REST 
+		<a href="/Altamira/rest/xml/file/taga"> <b>Taga.gpx</b></a> <br />
+		<br /> <br /> <br /> 
+		Second example: Read data from MySql database and show info as an XML using REST <a
+		href="/Altamira/rest/xml/db/taga"> <b>Taga.gpx</b></a>
+	</div>
+
+	<div class="footer">
+		<div class="footer1">
+			<div class="content">This web is just a demo of some work done
+				for this interview</div>
+		</div>
+	</div>
+</body>
+</html>
