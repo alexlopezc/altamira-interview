@@ -15,7 +15,8 @@ body,html{font-family: gotham_bookregular; color: #000;font-weight: normal;font-
 	background: url(../img/bg-trans.png);
 }
 .container3{background: none;padding-top: 23px;font-size: 16px;}
-.container4{
+.container4 {
+	font-size: 16px;	
 	padding-top: 40px;
 	padding-bottom: 40px;
 	background: url(../img/bg-trans.png);
