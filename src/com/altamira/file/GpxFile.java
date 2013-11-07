@@ -22,17 +22,28 @@ import com.topografix.gpx._1._1.GpxType;
  */
 public class GpxFile {
 
+	/**
+	 * Name of the context required by JAXB objects
+	 */
 	private final static String jaxbContextPath = "com.topografix.gpx._1._1";
 
+	/**
+	 * Name of the gpx file to be read
+	 */
 	private String filename;
+	
+	
+	/**
+	 * Returning JAXB object with the information of the file
+	 */
 	private GpxType data;
 
 
 	/**
+	 * Basic constructor which concatenates the extension to the filename
 	 * @param filename
 	 */
 	public GpxFile(String filename) {
-		super();
 		this.filename = filename+".gpx";
 	}
 
@@ -69,6 +80,11 @@ public class GpxFile {
 	}
 
 
+	/**
+	 * Reads the file and return the JAXB object
+	 * @return JAXB Object with the information of the file
+	 * @throws Exception
+	 */
 	public GpxType readGpxFile () throws Exception {
 		Object poe = null;
 		try {
@@ -76,12 +92,16 @@ public class GpxFile {
 			JAXBContext jc = JAXBContext.newInstance(jaxbContextPath);
 			Unmarshaller u = jc.createUnmarshaller();
 
+			// Create schema factory for getting unmarshallers
 			SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 			try {
-				//String schemaTxT = fileSchemaMap.get( new Integer( 1 ) );
+				// Get the schema of the file. This should be kept in a configuration file 
+				// and should read from there 
 				URL url = getClass().getClassLoader().getResource( "gpx.xsd" );
 				Schema schema = sf.newSchema( url );
 				u.setSchema( schema );
+				
+				// Set the handler for Validation of the file with the schema
 				u.setEventHandler( 
 						new ValidationEventHandler() {
 							// allow unmarshalling to continue even if there are errors

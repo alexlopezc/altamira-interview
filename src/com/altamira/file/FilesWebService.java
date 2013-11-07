@@ -23,7 +23,7 @@ public class FilesWebService {
 	
 	
 	/**
-	 * Default empty constructor - toot simple to do any thing
+	 * Default empty constructor - too simple to do any thing
 	 */
 	public FilesWebService() {
 	}

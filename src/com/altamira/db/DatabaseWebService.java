@@ -12,8 +12,8 @@ import javax.ws.rs.core.MediaType;
 import com.topografix.gpx._1._1.GpxType;
 
 /**
- * Example of web service based on REST which unmarshall froms disk
- * and marshalls to the web
+ * Example of web service based on REST which retrieves information from DB 
+ * and marshalls to the web as a service
  * 
  * @author alex
  *
@@ -28,10 +28,10 @@ public class DatabaseWebService {
 
 	
 	@GET
-	@Path("/{id}")
+	@Path("/{gpxId}")
 	@Produces (MediaType.APPLICATION_XML)
-	public GpxType getById(@PathParam("id") String id) throws Exception {	
-		return null;
+	public GpxType getById(@PathParam("gpxId") String gpxId) throws Exception {	
+		return DbUtils.getInstance().getGpxType(Integer.parseInt(gpxId));
 	}
 	
 	
